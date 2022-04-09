@@ -1,0 +1,40 @@
+<p> read works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <table border="4" [cellSpacing]="3" align="center">
+            <tr>
+                <th>id </th>
+                <th>name</th>
+                <th>address</th>
+                <th>salary</th>
+            </tr>
+            <tr *ngFor="let i of alldata ">
+                <td>{{i.id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.salary}}</td>
+                <!-- </tr> -->
+                <!-- </table> -->
+
+                <button class="btn btn-sm btn-success " [routerLink]="[ '/create',i.id] ">Update</button>&nbsp;
+                <button class="btn btn-sm btn-danger " (click)="deleted(i.id) ">Delete</button>
+            </tr>
+            <!-- <button class="btn btn-sm btn-success " [routerLink]="[ '/create',i.id] ">Update</button> -->
+        </table>
+    </div>
+</body>
+
+</html>
+<router-outlet>
+
+</router-outlet>

@@ -1,0 +1,46 @@
+<p>create works!</p>
+
+<div class="container mt-5">
+    <div *ngIf="errormsg" class="alert-alert-danger alert-dismissable">
+        <strong>{{errormsg}}</strong>
+
+    </div>
+    <div class="container mt-5">
+        <div *ngIf="successmsg" class="alert alert-succes">
+            <strong>{{successmsg}}</strong>
+
+        </div>
+
+        <form [formGroup]="userform" (ngSubmit)="usersubmit()">
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control" placeholder="Enter id" formControlName="id">
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control" placeholder="Enter name" formControlName="name">
+            </div>
+
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control" placeholder="Enter address" formControlName="address">
+            </div>
+            <div class="col-lg-4 ">
+                <input type="text" class="form-control" placeholder="Enter salary" formControlName="salary">
+            </div>
+            <!-- <div class="col-lg-4 mt-2"> -->
+            <!-- <button type="submit" class="btn btn-primary btn-sm" *ngIf="getparamid" (click)="userUpdate() ">Update</button> -->
+            <!-- </div> -->
+
+            <div class="col-lg-4 mt-2">
+                <button type="submit" class="btn btn-primary btn-sm">Create</button>
+            </div>
+
+            <!-- <div class="col-lg-4 mt-2" *ngIf="!getparamid">
+                <button type="submit" class="btn btn-primary btn-sm" (click)="usersubmit()">create</button>
+
+            </div> -->
+
+        </form>
+        <div class="col-lg-4 mt-2">
+            <button type="submit" class="btn btn-primary btn-sm" *ngIf="getparamid" (click)="userUpdate()">Update</button>
+
+        </div>
+    </div>
